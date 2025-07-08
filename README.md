@@ -12,7 +12,7 @@
 
 | No  | 프로젝트 이름    | 설명            | 기술 스택                     | 링크     |
 | --- | ---------------- | --------------- | ------------------------------ | -------- |
-| 1   | **MySQL&Oracle** | RDBMS의 MySQL과 Oracle 학습 | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) ![Oracle](https://img.shields.io/badge/Oracle-4AC0DA?style=for-the-badge&logo=oracle&logoColor=white) ![DBeaver](https://img.shields.io/badge/DBeaver-4A9ADA?style=for-the-badge&logo=dbeaver&logoColor=white)| [GitHub 링크](https://github.com/LeeJoEun-01/FISA_1st_mini_Project) |
+| 1   | **MySQL&Oracle** | RDBMS의 MySQL과 Oracle 학습 | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) ![Oracle](https://img.shields.io/badge/Oracle-4AC0DA?style=for-the-badge&logo=oracle&logoColor=white) ![DBeaver](https://img.shields.io/badge/DBeaver-4A9ADA?style=for-the-badge&logo=dbeaver&logoColor=white)| [GitHub 링크](https://github.com/LeeJoEun-01/FISA_basic_projects/blob/main/RDBMS-SQL/readme.md) |
 | - | - | **To Be Continued** | - | - |
 
 <br>
