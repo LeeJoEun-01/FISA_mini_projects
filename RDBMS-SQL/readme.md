@@ -10,6 +10,13 @@
 
 ---
 
+## 👥 함께 학습한 사람
+
+| 이제현  | 임유진     | 이정이              | 이조은                                                   |
+|:---:|:--------------:|:------------------:|:--------------------------------:|
+| <img src="https://github.com/lyjh98.png" width="80">      | <img src="https://github.com/imewuzin.png" width="80">    | <img src="https://github.com/2jeong2.png" width="80">     | <img src="https://github.com/LeeJoEun-01.png" width="80"> |
+| [@lyjh98](https://github.com/lyjh98)  |  [@imewuzin](https://github.com/imewuzin)       | [@2jeong2](https://github.com/2jeong2)   | [@LeeJoEun-01](https://github.com/LeeJoEun-01) | 
+
 ## ⚙️ 실습 테이블
 
 | 테이블 이름      | 속성                                                          | 데이터                     |
