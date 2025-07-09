@@ -21,8 +21,8 @@
 
 | 테이블 이름      | 속성                                                          | 데이터                     |
 | ---------------- | ------------------------------------------------------------- | --------------------------------- |
-| **`emp`: 사원**  | 사번, 이름, 직업, 상사번호, 급여, 커미션, 입사일, 부서번호 등 | ![image](https://github.com/user-attachments/assets/4bd6b58f-dc9e-4b20-8f56-7968d21166ab)|
-| **`dept`: 부서** | 부서번호, 부서명, 위치                                        | ![image](https://github.com/user-attachments/assets/9627ff00-cd2a-41b2-9438-57ec7dc01b27)|
+| **`emp`:<br>사원**  | 사번, 이름, 직업, 상사번호, 급여, 커미션, 입사일, 부서번호 등 | ![image](https://github.com/user-attachments/assets/4bd6b58f-dc9e-4b20-8f56-7968d21166ab)|
+| **`dept`:<br>부서** | 부서번호, 부서명, 위치                                        | ![image](https://github.com/user-attachments/assets/9627ff00-cd2a-41b2-9438-57ec7dc01b27)|
 
 
     
