@@ -1,13 +1,217 @@
-# 📘 대용량 데이터 활용 프로젝트
+# US Accidents Partitioning Performance Comparison
 
-## ✨ 학습 목표
+대용량 데이터셋으로 **파티셔닝 후 성능 비교**를 진행한 프로젝트이다.
 
-- 
+---
 
-## 👥 함께 학습한 사람
+## 팀원
 
-| 이조은  | 신준수     | 홍윤기              | 
-|:---:|:--------------:|:------------------:|
-| <img src="https://github.com/LeeJoEun-01.png" width="80">   | <img src="https://github.com/shinjunsuuu.png" width="80">    | <img src="https://github.com/yunkihong-dev.png" width="80">  |
-| [@LeeJoEun-01](https://github.com/LeeJoEun-01)   |  [@shinjunsuuu](https://github.com/shinjunsuuu)       |  [@yunkihong](https://github.com/yunkihong-dev)| 
- 
+| <img src="https://avatars.githubusercontent.com/yunkihong-dev" width="140"/> | <img src="https://avatars.githubusercontent.com/shinjunsuuu" width="140"/> | <img src="https://avatars.githubusercontent.com/LeeJoEun-01" width="140"/> |
+| :--------------------------------------------------------------------------: | :------------------------------------------------------------------------: | :------------------------------------------------------------------------: |
+|                                    홍윤기                                    |                                   신준수                                   |                                   이조은                                   |
+
+---
+
+## 데이터셋
+
+🚑 **[US Accidents (2016 - 2023) - Kaggle](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents/data)**
+
+- 데이터 설명:
+  - 미국 49개 주의 2016년 2월부터 2023년 3월까지 수집한 전국 단위 교통사고 데이터셋이다. <br>(교통 센서, 카메라, 도로교통부 API 등을 통해 수집한 약 770만 건의 사고 데이터를 포함)
+  - 사고 예측, 지역별 사고 분석, 날씨·시간·위치별 사고 특성 연구 등에 활용할 수 있다.
+- 파이썬으로 데이터 정제
+  - TRUE/FALSE 를 SQL의 1과 0으로 변경
+  - 사용하지 않을 컬럼 삭제 (15컬럼)
+
+## 데이터 속성명
+
+| 컬럼명            | 설명                                | 컬럼명            | 설명                         |
+| ----------------- | ----------------------------------- | ----------------- | ---------------------------- |
+| ID                | 사고 고유 식별자                    | Source            | 데이터 수집 소스             |
+| Severity          | 사고 심각도 (1: 낮음, 4: 매우 높음) | Start_Time        | 사고 발생 시각               |
+| End_Time          | 사고 종료 시각                      | City              | 사고 발생 도시               |
+| County            | 사고 발생 카운티                    | State             | 사고 발생 주(State)          |
+| Country           | 사고 발생 국가                      | Timezone          | 사고 발생 지역의 표준 시간대 |
+| Airport_Code      | 인근 공항 코드                      | Weather_Timestamp | 날씨 데이터 기록 시각        |
+| Temperature(F)    | 기온(화씨)                          | Visibility(mi)    | 가시거리(마일)               |
+| Wind_Direction    | 바람 방향                           | Wind_Speed(mph)   | 바람 속도(마일/시간)         |
+| Precipitation(in) | 강수량(인치)                        | Weather_Condition | 날씨 상태 (Rain, Snow 등)    |
+| Amenity           | 사고 인근 편의시설 여부 (0/1)       | Bump              | 과속 방지턱 여부 (0/1)       |
+| Crossing          | 횡단보도 여부 (0/1)                 | Give_Way          | 양보 표지 여부 (0/1)         |
+| Junction          | 교차로 여부 (0/1)                   | No_Exit           | 출구 없음 구역 여부 (0/1)    |
+| Railway           | 철도 교차 여부 (0/1)                | Roundabout        | 로터리 여부 (0/1)            |
+| Station           | 역 근처 여부 (0/1)                  | Stop              | 정지 표지 여부 (0/1)         |
+| Traffic_Calming   | 교통 진정 시설 여부 (0/1)           | Traffic_Signal    | 신호등 여부 (0/1)            |
+| Turning_Loop      | 회전 구간 여부 (0/1)                |                   |                              |
+
+---
+
+<details>
+<summary><span style="font-size: 24px; font-weight: bold;">DBeaver에 CSV 파일 Import</span></summary>
+
+1. database 생성
+1. database 생성
+1. database 우클릭 → `Import Data`
+1. `Input File` > `Browse` > `.csv` 파일 선택
+1. `Tables Mapping` > `Configure`
+   - `REAL`, `INTEGER` → `BIGINT`
+   - 자료 타입이 다르면 여기서 직접 매핑 필요
+
+예시:  
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/83d82405-b80b-46dd-ad91-ea2bb5713aae" />
+
+</details>
+
+## 파티션 프로젝트 목적
+
+- 대용량 데이터 파티셔닝을 통해 **쿼리 속도, 스캔량, 처리 비용 비교**
+- `LIST`, `RANGE`, 파티셔닝의 실제 성능 차이 실험
+- 대용량 데이터 핸들링 및 파티셔닝 실습
+
+---
+
+## 📊 파티션 방식
+
+| 파티션 기준                | 방식           | 설명                                                      |
+| -------------------------- | -------------- | --------------------------------------------------------- |
+| 년도(start_time-**year**)  | RANGE 파티셔닝 | 사고 발생 연도를 기준으로 분리 (2016~2023)                |
+| 계절(start_time-**month**) | LIST 파티셔닝  | start_time의 월을 기준으로 분리 <br/> (12~2,3~5,6~8,9~11) |
+| 사고 수준(**severity**)    | LIST 파티셔닝  | Severity 값을 기준으로 분리 (1~4)                         |
+
+> ### 년도(start_time-**year**) 파티셔닝 SQL
+
+```sql
+CREATE TABLE US_Accidents_patitioned_year (
+    -- 기존 컬럼들...
+    Accident_Year INT GENERATED ALWAYS AS (YEAR(Start_Time)) STORED,
+    PRIMARY KEY (ID, Accident_Year)
+)
+PARTITION BY RANGE (Accident_Year) (
+    PARTITION p2016 VALUES LESS THAN (2017),
+    PARTITION p2017 VALUES LESS THAN (2018),
+    PARTITION p2018 VALUES LESS THAN (2019),
+    PARTITION p2019 VALUES LESS THAN (2020),
+    PARTITION p2020 VALUES LESS THAN (2021),
+    PARTITION p2021 VALUES LESS THAN (2022),
+    PARTITION p2022 VALUES LESS THAN (2023),
+    PARTITION p2023 VALUES LESS THAN (2024),
+    PARTITION pMax   VALUES LESS THAN MAXVALUE
+);
+```
+
+> ### 계절(start_time-**month**) 파티셔닝 SQL
+
+```sql
+CREATE TABLE US_Accidents2_season_partitioned (
+    -- 기존 컬럼들...
+    Start_Month INT GENERATED ALWAYS AS (MONTH(Start_Time)) STORED,
+        PRIMARY KEY (ID, Start_Month)
+
+)
+PARTITION BY LIST (Start_Month)(
+PARTITION p_winter VALUES IN (12, 1, 2),
+PARTITION p_spring VALUES IN (3, 4, 5),
+PARTITION p_summer VALUES IN (6, 7, 8),
+PARTITION p_fall VALUES IN (9, 10, 11)
+);
+```
+
+> ### 사고 수준(**severity**) 파티셔닝 SQL
+
+```sql
+ALTER TABLE severity_partitioned_data
+PARTITION BY RANGE (Severity) (
+    PARTITION p01 VALUES LESS THAN (2),
+    PARTITION p02 VALUES LESS THAN (3),
+    PARTITION p03 VALUES LESS THAN (4),
+    PARTITION p04 VALUES LESS THAN (5),
+    PARTITION p_max VALUES LESS THAN MAXVALUE
+);
+```
+
+---
+
+# 쿼리별 다양한 파티션 성능 비교
+
+<details>
+<summary>DBeaver 사용해서 쿼리별 데이터 성능 비교하는 방법</summary>
+ - Window > Show View > Query Manager
+<img width="658" height="462" alt="image" src="https://github.com/user-attachments/assets/06923af3-d336-47ea-addf-721d6c47ceeb" />
+
+</details>
+
+## 날씨별 심각한 사고(Severtiry>=3) 건수 쿼리 비교
+
+```sql
+SELECT 
+    Weather_Condition,
+    COUNT(*) AS accident_count
+FROM
+    severity_partitioned_data
+WHERE
+    Severity >= 3
+GROUP BY
+    Weather_Condition
+ORDER BY
+    accident_count DESC;
+``` 
+<img width="441" height="235" alt="image" src="https://github.com/user-attachments/assets/24e50f60-de5f-425c-bac8-8d27e56a28bf" />
+
+- 원본 데이터 (파티셔닝 진행 X)
+  - <img width="1520" height="45" alt="image" src="https://github.com/user-attachments/assets/dc4bc19b-a675-4388-bbbb-7e72b143e997" />
+
+- `Severity` 기준으로 파티셔닝
+  - <img width="1517" height="45" alt="image" src="https://github.com/user-attachments/assets/4e4afe76-b158-41cb-b3a1-1bd011af737d" />
+
+- `년도` 기준으로 파티셔닝
+  - <img width="1523" height="48" alt="image" src="https://github.com/user-attachments/assets/62d3f50c-0157-4731-9149-dee7b1c66a14" />
+
+- `계절` 기준으로 파티셔닝
+  - <img width="1461" height="61" alt="image" src="https://github.com/user-attachments/assets/82b6e806-d54a-4bdf-945e-01131639cd19" />
+
+
+## 코로나 이전, 이후 도시별 사고 건수 쿼리 비교
+```sql
+SELECT 
+    Weather_Condition,
+    COUNT(*) AS accident_count
+FROM
+    severity_partitioned_data
+WHERE
+    Severity >= 3
+GROUP BY
+    Weather_Condition
+ORDER BY
+    accident_count DESC;
+``` 
+<img width="515" height="390" alt="image" src="https://github.com/user-attachments/assets/f23a2faa-ca14-432f-adda-df535c773114" />
+
+- 원본 데이터 (파티셔닝 진행 X)
+  - (사진)
+- `년도` 기준으로 파티셔닝
+  - (사진)
+
+## 계절별 사고 건수와 평균 기온 쿼리 비교
+```sql
+SELECT
+    CASE
+        WHEN Start_Month IN (12, 1, 2) THEN 'Winter'
+        WHEN Start_Month IN (3, 4, 5) THEN 'Spring'
+        WHEN Start_Month IN (6, 7, 8) THEN 'Summer'
+        WHEN Start_Month IN (9, 10, 11) THEN 'Fall'
+    END AS Season,
+    COUNT(*) AS Accident_Count,
+    ROUND(AVG(Temperature_F), 2) AS Avg_Temperature_F
+FROM US_Accidents2_season_partitioned
+GROUP BY Season
+ORDER BY FIELD(Season, 'Winter', 'Spring', 'Summer', 'Fall');
+```
+
+<img width="578" height="142" alt="image" src="https://github.com/user-attachments/assets/2990ad18-dfb4-4512-ae4f-1a8837554623" /> 
+
+- 원본 데이터 (파티셔닝 진행 X)
+  - <img width="703" height="35" alt="image" src="https://github.com/user-attachments/assets/2d4c8896-d40c-423d-bbc5-9dce092dee9e" />
+
+- `계절` 기준으로 파티셔닝
+  - <img width="709" height="22" alt="image" src="https://github.com/user-attachments/assets/9081b148-6bb5-4c7c-8ad8-8c9067f0c085" />
+
