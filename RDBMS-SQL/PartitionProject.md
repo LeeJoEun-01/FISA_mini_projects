@@ -75,7 +75,7 @@
 | 파티션 기준                | 방식           | 설명                                                      |
 | -------------------------- | -------------- | --------------------------------------------------------- |
 | 년도(start_time-**year**)  | RANGE 파티셔닝 | 사고 발생 연도를 기준으로 분리 (2016~2023)                |
-| 계절(start_time-**month**) | LIST 파티셔닝  | start_time의 월을 기준으로 분리 <br/> (12~2,3~5,6~8,9~11) |
+| 계절(start_time-**month**) | LIST 파티셔닝  | start_time의 월을 기준으로 분리 <br/> (12-2, 3-5, 6-8, 9-11) |
 | 사고 수준(**severity**)    | LIST 파티셔닝  | Severity 값을 기준으로 분리 (1~4)                         |
 
 > ### 년도(start_time-**year**) 파티셔닝 SQL
@@ -173,23 +173,26 @@ ORDER BY
 ## 코로나 이전, 이후 도시별 사고 건수 쿼리 비교
 ```sql
 SELECT 
-    Weather_Condition,
-    COUNT(*) AS accident_count
-FROM
-    severity_partitioned_data
-WHERE
-    Severity >= 3
-GROUP BY
-    Weather_Condition
-ORDER BY
-    accident_count DESC;
+  City,
+  CASE
+    WHEN YEAR(Start_Time) BETWEEN 2016 AND 2019 THEN '2016~2019'
+    WHEN YEAR(Start_Time) BETWEEN 2020 AND 2023 THEN '2020~2023'
+  END AS 기간구분,
+  COUNT(*) AS 사고건수
+FROM US_Accidents2
+WHERE YEAR(Start_Time) BETWEEN 2016 AND 2023
+  AND City IS NOT NULL
+GROUP BY City, 기간구분
+ORDER BY City, 기간구분;
 ``` 
 <img width="515" height="390" alt="image" src="https://github.com/user-attachments/assets/f23a2faa-ca14-432f-adda-df535c773114" />
 
 - 원본 데이터 (파티셔닝 진행 X)
-  - (사진)
+  - <img width="1523" height="50" alt="image" src="https://github.com/user-attachments/assets/f2761c0c-6e1d-475b-a9cf-a101b023cb75" />
+
 - `년도` 기준으로 파티셔닝
-  - (사진)
+  - <img width="1610" height="45" alt="image" src="https://github.com/user-attachments/assets/8154b456-8e71-4471-b606-0718a3bb08b4" />
+
 
 ## 계절별 사고 건수와 평균 기온 쿼리 비교
 ```sql
@@ -210,8 +213,7 @@ ORDER BY FIELD(Season, 'Winter', 'Spring', 'Summer', 'Fall');
 <img width="578" height="142" alt="image" src="https://github.com/user-attachments/assets/2990ad18-dfb4-4512-ae4f-1a8837554623" /> 
 
 - 원본 데이터 (파티셔닝 진행 X)
-  - <img width="703" height="35" alt="image" src="https://github.com/user-attachments/assets/2d4c8896-d40c-423d-bbc5-9dce092dee9e" />
-
+  - <img width="708" height="23" alt="image" src="https://github.com/user-attachments/assets/986b8d91-2d69-46f3-8635-31795dff4b0b" />
 - `계절` 기준으로 파티셔닝
   - <img width="709" height="22" alt="image" src="https://github.com/user-attachments/assets/9081b148-6bb5-4c7c-8ad8-8c9067f0c085" />
 
