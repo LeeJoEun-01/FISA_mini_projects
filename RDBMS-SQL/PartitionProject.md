@@ -51,11 +51,10 @@
 <summary><span style="font-size: 24px; font-weight: bold;">DBeaver에 CSV 파일 Import</span></summary>
 
 1. database 생성
-1. database 생성
-1. database 우클릭 → `Import Data`
-1. `Input File` > `Browse` > `.csv` 파일 선택
-1. `Tables Mapping` > `Configure`
-   - `REAL`, `INTEGER` → `BIGINT`
+2. database 우클릭 → `Import Data`
+3. `Input File` > `Browse` > `.csv` 파일 선택
+4. `Tables Mapping` > `Configure`
+   - `REAL`-> `FLOAT`
    - 자료 타입이 다르면 여기서 직접 매핑 필요
 
 예시:  
