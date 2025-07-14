@@ -1,20 +1,19 @@
 # US Accidents Partitioning Performance Comparison
 
-대용량 데이터셋으로 **파티셔닝 후 성능 비교**를 진행한 프로젝트이다.
+대용량 데이터셋으로 **파티셔닝 후 성능 비교**를 실습을 위한 프로젝트이다.
 
-## 파티션 프로젝트 목적
+## 프로젝트 목적
 
 - 대용량 데이터 파티셔닝을 통해 **쿼리 속도, 스캔량, 처리 비용 비교**
-- `LIST`, `RANGE`, 파티셔닝의 실제 성능 차이 실험
-- 대용량 데이터 핸들링 및 파티셔닝 실습
+- 다양한 파티셔닝 방식(RANGE, LIST)을 실제 데이터에 적용한 뒤 쿼리 처리 속도와 효율성 비교
 
 ---
 
 ## 팀원
 
-| <img src="https://avatars.githubusercontent.com/yunkihong-dev" width="140"/> | <img src="https://avatars.githubusercontent.com/shinjunsuuu" width="140"/> | <img src="https://avatars.githubusercontent.com/LeeJoEun-01" width="140"/> |
-| :--------------------------------------------------------------------------: | :------------------------------------------------------------------------: | :------------------------------------------------------------------------: |
-|                                    홍윤기                                    |                                   신준수                                   |                                   이조은                                   |
+| <img src="https://avatars.githubusercontent.com/LeeJoEun-01" width="140"/> | <img src="https://avatars.githubusercontent.com/shinjunsuuu" width="140"/> | <img src="https://avatars.githubusercontent.com/yunkihong-dev" width="140"/> |
+| :------------------------------------------------------------------------: | :------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
+|                                   이조은                                   |                                   신준수                                   |                                    홍윤기                                    |
 
 ---
 
@@ -30,38 +29,32 @@
   - `TRUE/FALSE` → SQL용 `1/0` 변환
   - 분석 목적에 맞지 않는 컬럼 15개를 제거하여 데이터 크기를 줄이고 처리 효율성을 향상시켰으며, 이를 통해 본격 분석 전 테스트 및 쿼리 성능 검증을 효과적으로 수행할 수 있도록 전처리를 진행
 
-## 데이터 속성명
+### 데이터 속성명
 
-| 컬럼명            | 설명                                | 컬럼명            | 설명                         |
-| ----------------- | ----------------------------------- | ----------------- | ---------------------------- |
-| ID                | 사고 고유 식별자                    | Source            | 데이터 수집 소스             |
-| Severity          | 사고 심각도 (1: 낮음, 4: 매우 높음) | Start_Time        | 사고 발생 시각               |
-| End_Time          | 사고 종료 시각                      | City              | 사고 발생 도시               |
-| County            | 사고 발생 카운티                    | State             | 사고 발생 주(State)          |
-| Country           | 사고 발생 국가                      | Timezone          | 사고 발생 지역의 표준 시간대 |
-| Airport_Code      | 인근 공항 코드                      | Weather_Timestamp | 날씨 데이터 기록 시각        |
-| Temperature(F)    | 기온(화씨)                          | Visibility(mi)    | 가시거리(마일)               |
-| Wind_Direction    | 바람 방향                           | Wind_Speed(mph)   | 바람 속도(마일/시간)         |
-| Precipitation(in) | 강수량(인치)                        | Weather_Condition | 날씨 상태 (Rain, Snow 등)    |
-| Amenity           | 사고 인근 편의시설 여부 (0/1)       | Bump              | 과속 방지턱 여부 (0/1)       |
-| Crossing          | 횡단보도 여부 (0/1)                 | Give_Way          | 양보 표지 여부 (0/1)         |
-| Junction          | 교차로 여부 (0/1)                   | No_Exit           | 출구 없음 구역 여부 (0/1)    |
-| Railway           | 철도 교차 여부 (0/1)                | Roundabout        | 로터리 여부 (0/1)            |
-| Station           | 역 근처 여부 (0/1)                  | Stop              | 정지 표지 여부 (0/1)         |
-| Traffic_Calming   | 교통 진정 시설 여부 (0/1)           | Traffic_Signal    | 신호등 여부 (0/1)            |
-| Turning_Loop      | 회전 구간 여부 (0/1)                |                   |                              |
+| 컬럼명            | 설명                                | 컬럼명            | 설명                         | 컬럼명         | 설명                          |
+| ----------------- | ----------------------------------- | ----------------- | ---------------------------- | -------------- | ----------------------------- |
+| ID                | 사고 고유 식별자                    | City              | 사고 발생 도시               | Bump           | 과속 방지턱 여부 (0/1)        |
+| Severity          | 사고 심각도 (1: 낮음, 4: 매우 높음) | State             | 사고 발생 주(State)          | Give_Way       | 양보 표지 여부 (0/1)          |
+| Start_Time        | 사고 발생 시각                      | Timezone          | 사고 발생 지역의 표준 시간대 | No_Exit        | 출구 없음 구역 여부 (0/1)     |
+| End_Time          | 사고 종료 시각                      | Weather_Timestamp | 날씨 데이터 기록 시각        | Roundabout     | 로터리 여부 (0/1)             |
+| Country           | 사고 발생 국가                      | Visibility(mi)    | 가시거리(마일)               | Stop           | 정지 표지 여부 (0/1)          |
+| Airport_Code      | 인근 공항 코드                      | Wind_Speed(mph)   | 바람 속도(마일/시간)         | Traffic_Signal | 신호등 여부 (0/1)             |
+| Temperature(F)    | 기온(화씨)                          | Weather_Condition | 날씨 상태 (Rain, Snow 등)    | Amenity        | 사고 인근 편의시설 여부 (0/1) |
+| Wind_Direction    | 바람 방향                           | Railway           | 철도 교차 여부 (0/1)         | Crossing       | 횡단보도 여부 (0/1)           |
+| Precipitation(in) | 강수량(인치)                        | Station           | 역 근처 여부 (0/1)           | Junction       | 교차로 여부 (0/1)             |
+| Source            | 데이터 수집 소스                    | Traffic_Calming   | 교통 진정 시설 여부 (0/1)    | Turning_Loop   | 회전 구간 여부 (0/1)          |
+| County            | 사고 발생 카운티                    |
 
----
 
 <details>
-<summary><span style="font-size: 24px; font-weight: bold;">DBeaver에 CSV 파일 Import</span></summary>
+<summary><span style="font-size: 24px; font-weight: bold;">DBeaver에 CSV 파일 Import하는 방법</span></summary>
 
 1. database 생성
 2. database 우클릭 → `Import Data`
 3. `Input File` > `Browse` > `.csv` 파일 선택
 4. `Tables Mapping` > `Configure`
-   - `REAL`-> `FLOAT`
-   - 자료 타입이 다르면 여기서 직접 매핑 필요
+   - `REAL`-> `FLOAT`와 같이
+   - <span style="color: #E6B800; font-weight: bold;">자료 타입이 다르면 여기서 직접 매핑 필요❗</span>
 
 예시:  
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/83d82405-b80b-46dd-ad91-ea2bb5713aae" />
@@ -72,11 +65,11 @@
 
 ## 📊 파티션 방식
 
-| 기준 | 방식 | 설명 |
-| --- | --- | --- |
-| 📆 **년도 (Start_Time - YEAR)** | RANGE | 2016~2023 연도별 분리 |
-| 🍂 **계절 (Start_Time - MONTH)** | LIST | 월 기준 계절별 분리 (겨울, 봄, 여름, 가을) |
-| 🚦 **사고 수준 (Severity)** | LIST | 심각도 기준 분리 (1~4) |
+| 기준                             | 방식  | 설명                                       |
+| -------------------------------- | ----- | ------------------------------------------ |
+| 📆 **년도 (Start_Time - YEAR)**  | RANGE | 2016~2023 연도별 분리                      |
+| 🍂 **계절 (Start_Time - MONTH)** | LIST  | 월 기준 계절별 분리 (겨울, 봄, 여름, 가을) |
+| 🚦 **사고 수준 (Severity)**      | LIST  | 심각도 기준 분리 (1~4)                     |
 
 > ### 년도(start_time-**year**) 파티셔닝 SQL
 
@@ -143,7 +136,7 @@ PARTITION BY RANGE (Severity) (
 ## 날씨별 심각한 사고(Severtiry>=3) 건수 쿼리 비교
 
 ```sql
-SELECT 
+SELECT
     Weather_Condition,
     COUNT(*) AS accident_count
 FROM
@@ -154,27 +147,33 @@ GROUP BY
     Weather_Condition
 ORDER BY
     accident_count DESC;
-``` 
+```
+
 <img width="441" height="235" alt="image" src="https://github.com/user-attachments/assets/24e50f60-de5f-425c-bac8-8d27e56a28bf" />
 
-- 원본 데이터 (파티셔닝 진행 X)
+- 원본 데이터 (파티셔닝 진행 X) - 기준
+
   - <img width="1520" height="45" alt="image" src="https://github.com/user-attachments/assets/dc4bc19b-a675-4388-bbbb-7e72b143e997" />
 
-- `Severity` 기준으로 파티셔닝
+- `Severity` 기준으로 파티셔닝 - <span style="color: #1E90FF;"> ▲+8.7%</span>
+
   - <img width="1517" height="45" alt="image" src="https://github.com/user-attachments/assets/4e4afe76-b158-41cb-b3a1-1bd011af737d" />
 
-- `년도` 기준으로 파티셔닝
+- `년도` 기준으로 파티셔닝 <span style="color: #FF4C4C;">▼ -6.2%</span> 감소
+
   - <img width="1523" height="48" alt="image" src="https://github.com/user-attachments/assets/62d3f50c-0157-4731-9149-dee7b1c66a14" />
 
-- `계절` 기준으로 파티셔닝
+- `계절` 기준으로 파티셔닝 - <span style="color: #1E90FF;"> ▲+1m</span>
   - <img width="1461" height="61" alt="image" src="https://github.com/user-attachments/assets/82b6e806-d54a-4bdf-945e-01131639cd19" />
-  
+
 #### 결과 고찰 🔍
+
 > 맑음, 구름 많음 등에서 사고 건수가 높았으며 이는 해당 날씨 조건에서 교통량이 많아 사고가 자주 발생했을 가능성을 시사한다. 비, 눈, 안개에서도 심각한 사고가 다수 발생해 도로 미끄러움과 시야 제한이 사고에 영향을 주었음을 보여주고 있어 악천후 시 사고 건수는 적어도 심각도는 높을 수 있어 안전 운전이 중요하다. 이를 통해 날씨별 사고 대응 정책 수립 및 사고 예방 방안을 마련하는 기반 자료로 활용이 가능하다.
 
 ## 코로나 이전, 이후 도시별 사고 건수 쿼리 비교
+
 ```sql
-SELECT 
+SELECT
   City,
   CASE
     WHEN YEAR(Start_Time) BETWEEN 2016 AND 2019 THEN '2016~2019'
@@ -186,20 +185,23 @@ WHERE YEAR(Start_Time) BETWEEN 2016 AND 2023
   AND City IS NOT NULL
 GROUP BY City, 기간구분
 ORDER BY City, 기간구분;
-``` 
+```
+
 <img width="515" height="390" alt="image" src="https://github.com/user-attachments/assets/f23a2faa-ca14-432f-adda-df535c773114" />
 
 - 원본 데이터 (파티셔닝 진행 X)
+
   - <img width="1523" height="50" alt="image" src="https://github.com/user-attachments/assets/f2761c0c-6e1d-475b-a9cf-a101b023cb75" />
 
 - `년도` 기준으로 파티셔닝
   - <img width="1610" height="45" alt="image" src="https://github.com/user-attachments/assets/8154b456-8e71-4471-b606-0718a3bb08b4" />
 
 #### 결과 고찰 🔍
+
 > 코로나 이전(2016-2019)과 이후(2020-2023) 사고 건수를 도시별로 비교한 결과, 일부 지역은 감소했지만 전반적으로는 증가세를 보였다. 특히 2021년 이후 사회적 거리두기 완화와 이동량 증가로 사고가 다시 급증했으며, 대도시를 중심으로 증가 폭이 커졌다. 이는 팬데믹 이후 배달 수요 증가와 자가용 이동 증가 등의 생활 변화가 주요 원인으로 해석된다. 이러한 결과는 교통안전 정책 및 인프라 개선 방향 설정에 활용될 수 있다.
 
-
 ## 계절별 사고 건수와 평균 기온 쿼리 비교
+
 ```sql
 SELECT
     CASE
@@ -215,11 +217,22 @@ GROUP BY Season
 ORDER BY FIELD(Season, 'Winter', 'Spring', 'Summer', 'Fall');
 ```
 
-<img width="578" height="142" alt="image" src="https://github.com/user-attachments/assets/2990ad18-dfb4-4512-ae4f-1a8837554623" /> 
+<img width="578" height="142" alt="image" src="https://github.com/user-attachments/assets/2990ad18-dfb4-4512-ae4f-1a8837554623" />
 
 - 원본 데이터 (파티셔닝 진행 X)
   - <img width="708" height="23" alt="image" src="https://github.com/user-attachments/assets/986b8d91-2d69-46f3-8635-31795dff4b0b" />
 - `계절` 기준으로 파티셔닝
   - <img width="709" height="22" alt="image" src="https://github.com/user-attachments/assets/9081b148-6bb5-4c7c-8ad8-8c9067f0c085" />
+
 #### 결과 고찰 🔍
+
 > 기온이 낮은 겨울과 가을에 사고 건수가 높아져 저온 및 기상 악화가 사고 위험도를 증가시키는 경향이 나타났다. 여름철은 기온이 높고 도로 상태가 안정되어 사고 건수가 가장 낮게 나타났다. 봄철은 기온이 낮음에도 여름보다 사고가 많아 계절별 사고 특성이 뚜렷하게 구분되었다. 파티셔닝과 전과 후 결과가 매우 뚜렷해 조회 기준에 따른 파티셔닝이 필요해 보인다는 생각이 들었다.
+
+
+### 트러블슈팅 ☄️
+1️⃣데이터셋 크기로 인한 성능 미분별 문제
+  : 이전 7만 건 데이터셋으로 테스트했을 때 파티셔닝 전후의 속도 차이가 거의 나타나지 않아 효과를 검증할 수 없었다. 이를 해결하기 위해 770만 건 이상 대용량 데이터셋(US Accidents 2016-2023) 으로 교체하여 실험하였고, 이후 파티셔닝의 성능 차이가 명확히 드러났다.
+2️⃣ VARCHAR 타입 필드 크기 문제
+  : DBeaver로 CSV Import 시 Description과 같이 길이가 가변적이고 큰 VARCHAR 필드의 크기 측정이 어려워 에러가 발생했다. 해결을 위해 분석에 필요 없는 Description 필드를 삭제하고, 나머지 VARCHAR 필드는 길이를 조정하여 테이블에 적재하였다.
+3️⃣ 파티셔닝 기준 및 쿼리 최적화
+  : 처음에는 단순히 파티셔닝을 적용하는 것에만 집중했지만, 실험 중 조건에 따라 특정 파티션만 스캔되도록 쿼리를 작성해야 성능 개선이 나타난다는 점을 발견했다. 이후 파티션 키 기반의 조회 조건으로 쿼리를 수정하여 실험의 신뢰성을 높였다.
