@@ -149,26 +149,20 @@ ORDER BY
     accident_count DESC;
 ```
 
-<img width="441" height="235" alt="image" src="https://github.com/user-attachments/assets/24e50f60-de5f-425c-bac8-8d27e56a28bf" />
+| 파티셔닝 기준           | 실행 시각        | 실행 시간 | 결과 건수 | 증감 |
+| ----------------- | ------------ | ----- | ----- |------|
+| ❌ 원본 데이터 (파티셔닝 X) | Jul-11 15:19 | 26s   | 127   | 기준 |
+| ⚙️ `Severity` 기준  | Jul-11 15:21 | 14s   | 127   | <span style="color=#0000FF"> ⬇️ 12s </span>|
+| 📅 `년도` 기준        | Jul-11 15:25 | 23s   | 127   | <span style="color=red"> ⬆️ 3s </span>|
+| 🍂 `계절` 기준        | Jul-11 15:28 | 27s   | 127   | <span style="color=red"> ⬆️ 1s </span>|
 
-- 원본 데이터 (파티셔닝 진행 X) - 기준
-
-  - <img width="1520" height="45" alt="image" src="https://github.com/user-attachments/assets/dc4bc19b-a675-4388-bbbb-7e72b143e997" />
-
-- `Severity` 기준으로 파티셔닝 - <span style="color: #1E90FF;"> ▲+8.7%</span>
-
-  - <img width="1517" height="45" alt="image" src="https://github.com/user-attachments/assets/4e4afe76-b158-41cb-b3a1-1bd011af737d" />
-
-- `년도` 기준으로 파티셔닝 <span style="color: #FF4C4C;">▼ -6.2%</span> 감소
-
-  - <img width="1523" height="48" alt="image" src="https://github.com/user-attachments/assets/62d3f50c-0157-4731-9149-dee7b1c66a14" />
-
-- `계절` 기준으로 파티셔닝 - <span style="color: #1E90FF;"> ▲+1m</span>
-  - <img width="1461" height="61" alt="image" src="https://github.com/user-attachments/assets/82b6e806-d54a-4bdf-945e-01131639cd19" />
 
 #### 결과 고찰 🔍
 
 > 맑음, 구름 많음 등에서 사고 건수가 높았으며 이는 해당 날씨 조건에서 교통량이 많아 사고가 자주 발생했을 가능성을 시사한다. 비, 눈, 안개에서도 심각한 사고가 다수 발생해 도로 미끄러움과 시야 제한이 사고에 영향을 주었음을 보여주고 있어 악천후 시 사고 건수는 적어도 심각도는 높을 수 있어 안전 운전이 중요하다. 이를 통해 날씨별 사고 대응 정책 수립 및 사고 예방 방안을 마련하는 기반 자료로 활용이 가능하다.
+
+<br>
+----
 
 ## 코로나 이전, 이후 도시별 사고 건수 쿼리 비교
 
@@ -187,18 +181,17 @@ GROUP BY City, 기간구분
 ORDER BY City, 기간구분;
 ```
 
-<img width="515" height="390" alt="image" src="https://github.com/user-attachments/assets/f23a2faa-ca14-432f-adda-df535c773114" />
-
-- 원본 데이터 (파티셔닝 진행 X)
-
-  - <img width="1523" height="50" alt="image" src="https://github.com/user-attachments/assets/f2761c0c-6e1d-475b-a9cf-a101b023cb75" />
-
-- `년도` 기준으로 파티셔닝
-  - <img width="1610" height="45" alt="image" src="https://github.com/user-attachments/assets/8154b456-8e71-4471-b606-0718a3bb08b4" />
+| 파티셔닝 기준           | 실행 시각        | 실행 시간  | 결과 건수 | 증감                                            |
+| ----------------- | ------------ | ------ | ----- | --------------------------------------------- |
+| ❌ 원본 데이터 (파티셔닝 X) | Jul-11 16:01 | 2m 29s | 200   | 기준                                            |
+| 📅 `년도` 기준        | Jul-11 15:57 | 2m 06s | 200   | <span style="color:#1E90FF;">⬇️ 21s 감소</span> |
 
 #### 결과 고찰 🔍
 
 > 코로나 이전(2016-2019)과 이후(2020-2023) 사고 건수를 도시별로 비교한 결과, 일부 지역은 감소했지만 전반적으로는 증가세를 보였다. 특히 2021년 이후 사회적 거리두기 완화와 이동량 증가로 사고가 다시 급증했으며, 대도시를 중심으로 증가 폭이 커졌다. 이는 팬데믹 이후 배달 수요 증가와 자가용 이동 증가 등의 생활 변화가 주요 원인으로 해석된다. 이러한 결과는 교통안전 정책 및 인프라 개선 방향 설정에 활용될 수 있다.
+
+<br>
+----
 
 ## 계절별 사고 건수와 평균 기온 쿼리 비교
 
@@ -217,17 +210,17 @@ GROUP BY Season
 ORDER BY FIELD(Season, 'Winter', 'Spring', 'Summer', 'Fall');
 ```
 
-<img width="578" height="142" alt="image" src="https://github.com/user-attachments/assets/2990ad18-dfb4-4512-ae4f-1a8837554623" />
+| 파티셔닝 기준           | 실행 시각        | 실행 시간 | 증감                                            |
+| ----------------- | ------------ | ----- | --------------------------------------------- |
+| ❌ 원본 데이터 (파티셔닝 X) | Jul-11 16:54 | 45s   | 기준                                            |
+| 🍂 `계절` 기준 파티셔닝   | Jul-11 16:39 | 22s   | <span style="color:#1E90FF;">🔽 23s 감소</span> |
 
-- 원본 데이터 (파티셔닝 진행 X)
-  - <img width="708" height="23" alt="image" src="https://github.com/user-attachments/assets/986b8d91-2d69-46f3-8635-31795dff4b0b" />
-- `계절` 기준으로 파티셔닝
-  - <img width="709" height="22" alt="image" src="https://github.com/user-attachments/assets/9081b148-6bb5-4c7c-8ad8-8c9067f0c085" />
 
 #### 결과 고찰 🔍
 
 > 기온이 낮은 겨울과 가을에 사고 건수가 높아져 저온 및 기상 악화가 사고 위험도를 증가시키는 경향이 나타났다. 여름철은 기온이 높고 도로 상태가 안정되어 사고 건수가 가장 낮게 나타났다. 봄철은 기온이 낮음에도 여름보다 사고가 많아 계절별 사고 특성이 뚜렷하게 구분되었다. 파티셔닝과 전과 후 결과가 매우 뚜렷해 조회 기준에 따른 파티셔닝이 필요해 보인다는 생각이 들었다.
 
+<br>
 
 ### 트러블슈팅 ☄️
 1️⃣데이터셋 크기로 인한 성능 미분별 문제
