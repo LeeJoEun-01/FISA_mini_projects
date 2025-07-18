@@ -125,13 +125,14 @@
 
 - **그래프 특징** : **서적/문구** 카테고리에서 타 연령대 대비 높은 비율 차지
 
-![35~45 사무기기,서적.png](attachment:dca1f6e3-a77f-4211-99b0-7b3006798a1d:ae8f266a-6c06-4c93-8f6a-d66db94e8163.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/fce91db2-69c9-4e36-a48c-51669c985aac" />
 
-     (대/중분류 기준)
 
 - **그래프 특징** : **차량 카테고리**에서 50세까지 지속 상승 후, 감소 추세 확인
+  - (대/중분류 기준)
 
-![35~45 차량.png](attachment:012f12fc-8558-463a-bb2d-bea9dddba486:5e719681-6884-40cc-b489-acff031c2c1a.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/1248b2b6-d176-491b-b65f-27431c83c557" />
+
 
 ### ✅ 카드 추천 기준
 
@@ -173,17 +174,12 @@
 - 여행 / 교통수단
 
 ### 📊 20세 ~30세 주요 소비 그래프
+- (중분류 기준) 
 
- (중분류 기준) 
-
-![image.png](attachment:235067ef-f159-4572-b24d-d46ca2623a46:image.png)
-
+<img width="1022" height="401" alt="image" src="https://github.com/user-attachments/assets/ad7a081d-07b3-4b42-8a98-0424a77bcc51" />
+<img width="1025" height="427" alt="image" src="https://github.com/user-attachments/assets/c1c86b69-60a6-4117-9e58-446d91a9dcd1" />
 - 그래프 특징 :
     - 음식점, 프랜차이즈 외식 지출, 여행 지출 비율이 가장 높음
-
- 
-
-![image.png](attachment:56fc3aca-8e7b-4e56-b549-951fd942c8df:image.png)
 
 ### ✅ 카드 추천 기준
 
@@ -205,7 +201,8 @@
 - 혜택 : 여행, 숙박, 항공권 할인 제공
     
     - 
-    
+
+---
 
 ## **💎 회원 등급별 소비 패턴**
 
@@ -213,8 +210,7 @@
 - 따라서 VVIP 회원 등급의 소비 패턴을 분석하여 카드 추천을 하고자 함
 
 ### 📊 회원 등급별 분포
-
-        (카드 전체 사용량 기준)
+- (카드 전체 사용량 기준)
 
 - 회원 등급별 인원수를 보았을 때 VVIP 회원은 전체 인원의 약 1%에 해당함
     - 21: VVIP
@@ -223,60 +219,58 @@
     - 24: 골드
     - 25: 해당없음음
 
-![1.png](attachment:2b132dca-ff13-4059-8376-585cbd10f6ac:1.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/80803e76-8764-4a7b-8fba-1f15578e9827" />
 
 ### 📊 회원 등급별 평균 카드 사용량
-
-        (카드 전체 사용량 기준)
+- (카드 전체 사용량 기준)
 
 - 회원 등급별 평균 카드 사용량을 보면 VVIP 등급이 가장 높은 것을 볼 수 있음
 - 등급별 카드 사용량이 일정하게 증가하는 것을 보아 등급 선정 기준을 잘 잡은 듯 함
 
-![2.png](attachment:4c25d5fe-8ba1-470d-82c0-69419cf12c81:2.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/b2e5f007-26c5-43f6-9902-5fa4692240da" />
+
 
 ### 📊 VVIP 회원 등급의 주요 소비 그래프
-
-     (대분류기준)
+- (대분류기준)
 
 - 회원 등급별 대분류 카드 사용량을 보면 대부분의 분류들에 있어 균등하게 카드 사용량이 증가하는데 특히 유통, 요식업, 보험/병원 분류에서 카드 사용량이 가장 눈에 띄게 늘어나는 것을 볼 수 있음
 
-![3.png](attachment:5a0e22ca-7153-454a-addd-3be1b212b9dc:3.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/6039474e-4455-42fa-81c4-2adef4c76665" />
+
 
 ### ✅ 주요 소비 카테고리
-
 - 유통업
 - 요식업
 - 보험/병원
 
 ### 📊 VVIP 회원 등급의 유통업 분류별 소비 그래프
-
-     (중분류기업 분류별 소비 그래프)
+- (중분류기업 분류별 소비 그래프)
 
 - 유통업 카드 사용량 중 회원 등급이 올라갈수록 상대적으로 유통업 영리 분류보다 유통업 비영리에 카드 사용량이 더 많음
 
-![4.png](attachment:3295add8-11a3-49ac-8cdf-0c9434d94d80:4.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/cb52a65e-6ab9-4feb-8f12-4a377dd00196" />
 
 - 영리 유통업보다 비영리 유통업에 돈을 더 소비
     - 금전적으로 여유가 있어 비영리 유통업(ex.학술, 종교, 자선) 소비 추구
 
 ### 📊 VVIP 회원 등급의 요식업 분류별 소비 그래프
-
-     (중분류기준)
+- (중분류기준)
 
 - 요식업 분류 중 일반/휴게 음식과 음식료품 중 회원 등급이 올라갈수록 음식료품에 카드 사용량이 더 많음
 
-![5.png](attachment:f9d4c91f-947e-40ed-ba7a-1fda42724bb7:5.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/7755339f-52eb-44bb-a540-bd6e18debcaf" />
+
 
 - 음식점에서의 카드 사용량은  다른 등급의 회원들과 비슷하지만 음식료품에 돈을 더 많이 소비
     - 기본적인 음식료품을 더 고가의 상품을 사용
 
 ### 📊 VVIP 회원 등급의 보험/의료 분류별 소비 그래프
-
-     (중분류기준)
+- (중분류기준)
 
 - 보험/의료 분류 중 보건/위생, 보험, 의료기관 모두 등급이 올라갈수록 카드 사용량이 많지만 의료기관에 카드 사용량이 가장 눈에 띄게 증가함
 
-![6.png](attachment:aee9dede-fb02-4989-92f2-c8ab5efb88d7:6.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/dbcaec0c-3d42-498f-a411-ebecec1e43d8" />
+
 
 - 의료기관에서 다른 등급의 회원들보다 돈을 더 많이 소비
     - 병원에 돈을 아끼지 않음
