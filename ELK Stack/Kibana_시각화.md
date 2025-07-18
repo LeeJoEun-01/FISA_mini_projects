@@ -41,8 +41,8 @@
         
         (ex. 대형마트, 편의점, 온라인 쇼핑몰 etc..)
         
-    - 전체적으로 20살때부터 40세 미만까지 계속 소비가 증가하다가 40세부터 조금씩 전체적인 소비가 감소
-    - 이 와중에도 보험/병원비는 계속 증가
+    - 전체적으로 20세부터 40세 미만까지 계속 소비가 증가하다가 40세부터 조금씩 전체적인 소비가 감소
+    - 보험/병원비는 계속 증가
 
 ### 신용카드/체크카드 사용
 | area 그래프 | stackbar 그래프|
@@ -53,7 +53,7 @@
 
 ## 🧓 65세 이상 소비 패턴 분석
 
-### 🕸️ 모든 소비량을 포함한 그래프
+### 🕸️ 전체 분류 포함 소비량 그래프
 
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/1183d2ea-cd84-4356-87e2-038860ea1b7b" />
 
@@ -157,7 +157,7 @@
 
 | 카드 이미지 | 카드명 | 주요 혜택 |
 |-------------|--------|-----------|
-|<img width="400" alt="오하카드" src="https://github.com/user-attachments/assets/6cc636e0-922f-4bc9-a373-af663e690313" />| ***우리카드 카드의정석 오하 CHECK** | **EAT 5% 캐시백**<br>•배달의민족, 쿠팡이츠 5% 캐시백 <br> <br>**LIFE 5% 캐시백**<br>• 대중교통, 이동통신 5% 캐시백 |
+|<img width="400" alt="오하카드" src="https://github.com/user-attachments/assets/6cc636e0-922f-4bc9-a373-af663e690313" />| **우리카드 카드의정석 오하 CHECK** | **EAT 5% 캐시백**<br>•배달의민족, 쿠팡이츠 5% 캐시백 <br> <br>**LIFE 5% 캐시백**<br>• 대중교통, 이동통신 5% 캐시백 |
 |<img width="400" alt="위비트래블" src="https://github.com/user-attachments/assets/8e5a79fe-5688-4783-8cb3-0625c139063a" />| **우리카드 위비트래블 체크카드** | **해외 가맹점 이용수수료 면제**<br><br>**해외, 간편결제 5% 캐시백**|
 
 
@@ -174,7 +174,7 @@
     - 22: VIP
     - 23: 플래티넘
     - 24: 골드
-    - 25: 해당없음음
+    - 25: 해당없음
 
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/80803e76-8764-4a7b-8fba-1f15578e9827" />
 
@@ -236,35 +236,10 @@
 
 ### 🔖 카드 추천
 
-- **TWO CHAIRS W :**
-    
-    https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD101S02.do
-    
-
-![image.png](attachment:1c810337-d07a-4232-ab88-2d62b084b031:image.png)
-
-**혜택**
-
-- 프리미엄 기프트 2종
-    - 초년도 1천만원, 차년도 이후 5천만원 이상 이용 시 제공
-- **국내외 2% 적립**
-    - 전월실적조건 없이 월 이용금액 1억원까지 적립 제공
-
-- **로얄블루1000카드 [SKYPASS]:**
-    
-    https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD101S02.do
-    
-
-![image.png](attachment:4d851526-0ed9-48fb-b0a3-8eaa51547f79:image.png)
-
-혜택
-
-- **의전혜택**
-    - 명품점 점장 Escort, 미술관 Docent 서비스 등차별화 된 의전혜택 제공
-- **100만원 +**
-    - 100만원 상당의 GIFT는 기본,연간 이용실적에 따른 추가 GIFT 제공
-
----
+| 카드 이미지 | 카드명 | 주요 혜택 |
+|-------------|--------|-----------|
+| <img width="400" alt="카드1" src="https://github.com/user-attachments/assets/927da2bf-de80-4409-a5aa-02c49f36e61c" /> | **TWO CHAIRS W** | **프리미엄 기프트 2종**<br>• 초년도 1천만원, 차년도 이후 5천만원 이상 이용 시 제공<br><br>**국내외 2% 적립**<br>• 전월실적조건 없이 월 이용금액 1억원까지 적립 제공 |
+| <img width="400" alt="카드2" src="https://github.com/user-attachments/assets/1f5b17aa-195f-4230-838a-57ddf6f8044c" /> | **로얄블루1000카드 [SKYPASS]** | **의전혜택**<br>• 명품점 전장 Escort, 미술관 Docent 서비스 등 다양한 의전혜택 제공<br><br>**100만원 +**<br>• 100만원 상당의 GIFT는 기본, 연간 이용실적에 따른 추가 GIFT 제공 |
 
 ## 💡 인사이트
 
