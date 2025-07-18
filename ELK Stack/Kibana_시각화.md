@@ -86,30 +86,10 @@
 
 ### 🔖 카드 추천
 
-- **우리카드 카드의정석 EVERYDAY CHECK :**
-    
-    https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD101S02.do
-    
-
-![image.png](attachment:35ce2734-a407-42d0-8698-2937ff3e4d66:image.png)
-
-**혜택**
-
-- **국내/해외 가맹점 0.2% 적립**
-- **마트/슈퍼/커피/주유 0.**1% 특별 적립
-- 전월 실적 조건, 적립한도 제한 없음
-
-- **우리카드 7CORE :**
-    
-    https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD101S02.do?cdPrdCd=103755
-    
-
-![image.png](attachment:5af3da63-dd2a-4114-8737-3e24d37e7fca:image.png)
-
-**혜택**
-
-- 온라인쇼핑, 대형마트, 배달앱 10% 청구할인
-- 교육, 병원, 주유 10% 청구 할인
+| 카드 이미지                                   | 카드명                        | 주요 혜택                                                                                              |
+| --------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------ |
+| <img width="400" alt="image" src="https://github.com/user-attachments/assets/cf8c4e7d-4c78-4e6c-a7bc-2b73003204a7" /> | **카드의정석 EVERYDAY CHECK** | 국내/해외 가맹점 0.2% 적립<br>**마트/슈퍼/커피/주유** 0.1% 특별 적립<br>전월 실적 조건, 적립한도 제한 없음 |
+| <img width="400" alt="image" src="https://github.com/user-attachments/assets/b46bab65-8a5e-40ba-ae20-c15db6f7b3e8" />| **우리카드 7CORE**            | **온라인쇼핑, 대형마트, 배달앱** 10% 청구할인<br>교육, **병원**, 주유 10% 청구 할인                            |
 
 ---
 
