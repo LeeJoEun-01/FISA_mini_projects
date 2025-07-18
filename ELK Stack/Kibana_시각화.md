@@ -5,6 +5,13 @@
 - 본 프로젝트는 카드 소비 데이터를 기반으로 다양한 연령대 및 회원등급별 사용자 소비 패턴을 분석
 - Kibana 시각화를 통해 **데이터 기반 카드 추천** 인사이트 도출을 목적으로 함
 
+## 👥 팀 소개
+
+| <img width="150px" src="https://avatars.githubusercontent.com/u/45265805?v=4"/> | <img width="150px" src="https://avatars.githubusercontent.com/u/112679148?v=4"/> | <img width="150px" src="https://avatars.githubusercontent.com/u/176018876?v=4"/> | <img width="150px" src="https://avatars.githubusercontent.com/u/78733700?v=4"/> |
+| :---: | :---: | :---: | :---: |
+| **박지원** | **신기범** | **임채준** | **이조은** |
+| [@bbo9866](https://github.com/bbo9866) | [@shin-kibeom](https://github.com/shin-kibeom) | [@dlacowns21](https://github.com/dlacowns21) | [@LeeJoEun-01](https://github.com/LeeJoEun-01) |
+
 ## 🔍 프로젝트 개요
 
 - **분석 대상**: 연령대, 카테고리, 회원등급, 카드유형(신용/체크)
