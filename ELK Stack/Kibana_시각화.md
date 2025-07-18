@@ -22,7 +22,8 @@
 
 ## 📊 전연령대별 소비 그래프
 
-![image.png](attachment:963f2448-fadb-4631-8c92-8e97cc1c50f2:a1b5a390-4e32-4eee-ab66-fe197c49c3fd.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/92327d32-59ac-4318-bd06-91bebc424365" />
+
 
 **[ 그래프 소개 ]**
 
@@ -36,19 +37,19 @@
     - 전체적으로 20살때부터 40세 미만까지 계속 소비가 증가하다가 40세부터 조금씩 전체적인 소비가 감소
     - 이 와중에도 보험/병원비는 계속 증가
 
-### 신용카드/체크카드
+### 신용카드/체크카드 사용
+| area 그래프 | stackbar 그래프|
+| ---- | ----|
+|<img width="500" alt="image" src="https://github.com/user-attachments/assets/32e84d61-bdf8-4e4d-bc8b-746054a43463" />|    <img width="500" alt="image" src="https://github.com/user-attachments/assets/bb5351a6-ae40-4e47-8c1f-d56b991a9ba4" /> |
 
-![image.png](attachment:1c53583a-4928-47e2-97a0-c75d544358a9:image.png)
-
-![image.png](attachment:92ee21c6-8d80-4045-8ce3-90654dd68ec6:image.png)
-
-- 신용카드 사용량이 많아지는 35세부터 신용카드와 체크카드 함께 추천
+---
 
 ## 🧓 65세 이상 소비 패턴 분석
 
 ### 🕸️ 모든 소비량을 포함한 그래프
 
-![image.png](attachment:d2678264-ab4a-4f4d-b116-4742ff0d2798:d3766a47-dca7-413a-b997-35a490f67b78.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/1183d2ea-cd84-4356-87e2-038860ea1b7b" />
+
 
 ### ✅ 주요 소비 카테고리
 
@@ -57,17 +58,17 @@
 - 음식료품
 - 일반/휴게음식
     
-    ### 📊 65세 이상 주요 소비 그래프
+### 📊 65세 이상 주요 소비 그래프
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/dcc15d6e-f87b-4909-9089-a508bda841e3" />
     
-
-![image.png](attachment:e19663e4-fcaa-42b6-af0d-ac8608d1fcbc:07825647-73c6-4dea-937d-08ffd59f48fc.png)
 
 **그래프 특징**
 
 - 일반/휴게음식, 음식료품 소비량과 전체적으로 소비가 감소
 - 의료기관 소비량이 점진적으로 계속 증가
 
-![image.png](attachment:f4ac4894-697d-4462-a725-916ab8d23a1e:image.png)
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/dade8161-fbe2-4adb-a716-37734f599b42" />
+
 
 ### ✅ 카드 추천 기준
 
