@@ -29,7 +29,7 @@
 
 ## 📊 전연령대별 소비 그래프
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/92327d32-59ac-4318-bd06-91bebc424365" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/92327d32-59ac-4318-bd06-91bebc424365" />
 
 
 **[ 그래프 소개 ]**
@@ -55,7 +55,7 @@
 
 ### 🕸️ 전체 분류 포함 소비량 그래프
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/1183d2ea-cd84-4356-87e2-038860ea1b7b" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/1183d2ea-cd84-4356-87e2-038860ea1b7b" />
 
 
 ### ✅ 주요 소비 카테고리
@@ -66,7 +66,7 @@
 - 일반/휴게음식
     
 ### 📊 65세 이상 주요 소비 그래프
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/dcc15d6e-f87b-4909-9089-a508bda841e3" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/dcc15d6e-f87b-4909-9089-a508bda841e3" />
     
 
 **그래프 특징**
@@ -74,7 +74,7 @@
 - 일반/휴게음식, 음식료품 소비량과 전체적으로 소비가 감소
 - 의료기관 소비량이 점진적으로 계속 증가
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/dade8161-fbe2-4adb-a716-37734f599b42" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/e89faceb-9e17-4032-9705-3052707f5153" />
 
 
 ### ✅ 카드 추천 기준
@@ -105,13 +105,13 @@
 
 - **그래프 특징** : **서적/문구** 카테고리에서 타 연령대 대비 높은 비율 차지
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/fce91db2-69c9-4e36-a48c-51669c985aac" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/fce91db2-69c9-4e36-a48c-51669c985aac" />
 
 
 - **그래프 특징** : **차량 카테고리**에서 50세까지 지속 상승 후, 감소 추세 확인
   - (대/중분류 기준)
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/1248b2b6-d176-491b-b65f-27431c83c557" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/1248b2b6-d176-491b-b65f-27431c83c557" />
 
 
 ### ✅ 카드 추천 기준
@@ -176,7 +176,7 @@
     - 24: 골드
     - 25: 해당없음
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/80803e76-8764-4a7b-8fba-1f15578e9827" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/80803e76-8764-4a7b-8fba-1f15578e9827" />
 
 ### 📊 회원 등급별 평균 카드 사용량
 - (카드 전체 사용량 기준)
@@ -184,7 +184,7 @@
 - 회원 등급별 평균 카드 사용량을 보면 VVIP 등급이 가장 높은 것을 볼 수 있음
 - 등급별 카드 사용량이 일정하게 증가하는 것을 보아 등급 선정 기준을 잘 잡은 듯 함
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/b2e5f007-26c5-43f6-9902-5fa4692240da" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/b2e5f007-26c5-43f6-9902-5fa4692240da" />
 
 
 ### 📊 VVIP 회원 등급의 주요 소비 그래프
@@ -192,7 +192,7 @@
 
 - 회원 등급별 대분류 카드 사용량을 보면 대부분의 분류들에 있어 균등하게 카드 사용량이 증가하는데 특히 유통, 요식업, 보험/병원 분류에서 카드 사용량이 가장 눈에 띄게 늘어나는 것을 볼 수 있음
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/6039474e-4455-42fa-81c4-2adef4c76665" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/6039474e-4455-42fa-81c4-2adef4c76665" />
 
 
 ### ✅ 주요 소비 카테고리
@@ -205,7 +205,7 @@
 
 - 유통업 카드 사용량 중 회원 등급이 올라갈수록 상대적으로 유통업 영리 분류보다 유통업 비영리에 카드 사용량이 더 많음
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/cb52a65e-6ab9-4feb-8f12-4a377dd00196" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/cb52a65e-6ab9-4feb-8f12-4a377dd00196" />
 
 - 영리 유통업보다 비영리 유통업에 돈을 더 소비
     - 금전적으로 여유가 있어 비영리 유통업(ex.학술, 종교, 자선) 소비 추구
@@ -215,7 +215,7 @@
 
 - 요식업 분류 중 일반/휴게 음식과 음식료품 중 회원 등급이 올라갈수록 음식료품에 카드 사용량이 더 많음
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/7755339f-52eb-44bb-a540-bd6e18debcaf" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/7755339f-52eb-44bb-a540-bd6e18debcaf" />
 
 
 - 음식점에서의 카드 사용량은  다른 등급의 회원들과 비슷하지만 음식료품에 돈을 더 많이 소비
@@ -226,7 +226,7 @@
 
 - 보험/의료 분류 중 보건/위생, 보험, 의료기관 모두 등급이 올라갈수록 카드 사용량이 많지만 의료기관에 카드 사용량이 가장 눈에 띄게 증가함
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/dbcaec0c-3d42-498f-a411-ebecec1e43d8" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/dbcaec0c-3d42-498f-a411-ebecec1e43d8" />
 
 
 - 의료기관에서 다른 등급의 회원들보다 돈을 더 많이 소비
@@ -238,7 +238,7 @@
 
 | 카드 이미지 | 카드명 | 주요 혜택 |
 |-------------|--------|-----------|
-| <img width="400" alt="카드1" src="https://github.com/user-attachments/assets/927da2bf-de80-4409-a5aa-02c49f36e61c" /> | **TWO CHAIRS W** | **프리미엄 기프트 2종**<br>• 초년도 1천만원, 차년도 이후 5천만원 이상 이용 시 제공<br><br>**국내외 2% 적립**<br>• 전월실적조건 없이 월 이용금액 1억원까지 적립 제공 |
+| <img width="400" alt="카드1" src="https://github.com/user-attachments/assets/927da2bf-de80-4409-a5aa-02c49f36e61c" /> | **TWO CHAIRS W** |**프리미엄 기프트 2종**<br>• 초년도 1천만원, 차년도 이후 5천만원 이상 이용 시 제공<br><br>**국내외 2% 적립**<br>• 전월실적조건 없이 월 이용금액 1억원까지 적립 제공 |
 | <img width="400" alt="카드2" src="https://github.com/user-attachments/assets/1f5b17aa-195f-4230-838a-57ddf6f8044c" /> | **로얄블루1000카드 [SKYPASS]** | **의전혜택**<br>• 명품점 전장 Escort, 미술관 Docent 서비스 등 다양한 의전혜택 제공<br><br>**100만원 +**<br>• 100만원 상당의 GIFT는 기본, 연간 이용실적에 따른 추가 GIFT 제공 |
 
 ## 💡 인사이트
