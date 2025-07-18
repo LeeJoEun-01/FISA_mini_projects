@@ -174,12 +174,14 @@
 - 여행 / 교통수단
 
 ### 📊 20세 ~30세 주요 소비 그래프
-- (중분류 기준) 
+- (중분류 기준)
 
-<img width="1022" height="401" alt="image" src="https://github.com/user-attachments/assets/ad7a081d-07b3-4b42-8a98-0424a77bcc51" />
-<img width="1025" height="427" alt="image" src="https://github.com/user-attachments/assets/c1c86b69-60a6-4117-9e58-446d91a9dcd1" />
+| 요식업 | 숙박업|
+| ------- | ------|
+|<img width="500" alt="image" src="https://github.com/user-attachments/assets/ad7a081d-07b3-4b42-8a98-0424a77bcc51" />|<img width="500" alt="image" src="https://github.com/user-attachments/assets/c1c86b69-60a6-4117-9e58-446d91a9dcd1"/> |
+
 - 그래프 특징 :
-    - 음식점, 프랜차이즈 외식 지출, 여행 지출 비율이 가장 높음
+    음식점, 프랜차이즈 외식 지출, 여행 지출 비율이 가장 높음
 
 ### ✅ 카드 추천 기준
 
