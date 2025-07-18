@@ -1,4 +1,5 @@
-# 프로젝트명: "우리" 어떤 카드 쓸까?
+# 프로젝트명: "우리" 어떤 카드 쓸까? <img width="115" alt="로고다운로드-우리은행로고2" src="https://github.com/user-attachments/assets/4d3f0c43-65ec-48ce-af4a-12451f5bf2a6" style="vertical-align: middle;" />
+
 
 
 ## **📊 주제 : 카드 소비 데이터 기반 ELK 분석 및 맞춤 카드 추천**
